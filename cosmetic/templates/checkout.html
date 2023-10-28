@@ -1,0 +1,44 @@
+{% extends "basic.html" %}
+
+{% block body %}
+
+<div class="container mt-5 mb-5">
+     <h2>Checkout</h2>
+     <br>
+     <form action="{{url_for('main.checkout')}}" method="post">
+
+          <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">First Name</span>
+               </div>
+               <input type="text" class="form-control" placeholder="ex. Mac" aria-label="Firstname" name="firstname" aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">SurnName</span>
+               </div>
+               <input type="text" class="form-control" placeholder="ex. doz" aria-label="surname" name="surname" aria-describedby="basic-addon1">
+          </div>     
+
+          <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+               </div>
+               <input type="email" class="form-control" placeholder="ex. macdoe@gmail.com" name="email" aria-label="surname" aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Phone</span>
+               </div>
+               <input type="phone" name = "phone" class="form-control" placeholder="ex. +84845624" aria-label="phone" aria-describedby="basic-addon1">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Confirm Order</button>
+     </form>
+
+</div>
+
+
+{% endblock body %}

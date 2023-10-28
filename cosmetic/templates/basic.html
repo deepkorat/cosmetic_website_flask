@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Cosmetic Store</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+     .bg {
+          background-image: url('image/3-cut.jpg');
+          background-size: cover;
+          height: 30px;
+     }
+</style>
+
+<body class="d-flex flex-column min-vh-100 bg">
+     <!-- This is navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
+          <a class="navbar-brand" href="#">Cosmetic Store</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                         <a class="nav-link text-light" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link text-light" href="{{url_for('main.category')}}">Category</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link text-light" href="{{url_for('main.all_product')}}">All Product</a>
+                    </li>
+
+
+               </ul>
+               <ul class="navbar-nav ml-auto">
+                    <li class="nav-item pr-5">
+                         <form class="form-inline my-2 my-lg-0" action="{{url_for('main.search')}}">
+                              <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search"
+                                   aria-label="Search">
+                              <button class="btn btn-outline-light my-2 mr-3 my-sm-0" type="submit">Search</button>
+                         </form>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link btn btn-light border rounded-sm" href="{{url_for('main.cart')}}">
+                              <i class="fas fa-shopping-cart"></i>
+                              <b class="text-dark">
+                                   Cart
+                              </b>
+                         </a>
+                    </li>
+               </ul>
+          </div>
+     </nav>
+
+     {% with messages = get_flashed_messages() %}
+     {% if messages %}
+     <div class="alert alert-primary" role="alert">
+          {% for message in messages %}
+          {{ message }}
+          {% endfor %}
+     </div>
+     {% endif %}
+     {% endwith %}
+
+     {% block head %}
+
+     {% endblock %}
+
+
+
+     {% block body %}
+
+     {% endblock body %}
+
+
+
+     <!-- footer -->
+     <div class="mt-auto">
+          <footer class="bg-secondary text-white text-center py-3">
+               <div class="row d-flex justify-content-around">
+                    <div>
+                         <h2>Cosmetic Store</h2>
+                         <p>&copy; 2023 Cosmetic Store. All Rights Reserved.</p>
+                    </div>
+                    <div>
+                         <h5>Links: </h5>
+                         <a href="/" class="nav-link text-light">Home</a>
+                         <a href="/product.html" class="nav-link text-light">Product</a>
+                    </div>
+               </div>
+          </footer>
+     </div>
+
+
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

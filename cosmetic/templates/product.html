@@ -1,0 +1,38 @@
+{% extends "basic.html" %}
+
+{% block body %}
+
+     <div class="container mt-3">
+          <div class="jumbotron"
+               style="background-image: url(/image/2.jpg); object-fit: contain; background-size: cover;">
+               <h3 class="display-4">Our Products</h3>
+               <p class="lead">Let's explore our High-quality cosmetics.</p>
+          </div>
+     </div>
+
+     <div class="container mt-5">
+          <div class="row">
+
+               {% for product in products %}
+                 
+               <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                         <div style="height: 200px;">
+                              <img src="{{ url_for('static', filename='image/p'+ product.id|string +'.webp' )}}" style="object-fit: contain; height: 200px;" class="card-img-top"
+                                   alt="Product 1"> 
+                         </div>
+                         <div class="card-body">
+                              <h5 class="card-title">{{product.name}}</h5>
+                              <p class="card-text">Rating: ★★★★☆</p>
+                              <a href="{{url_for('main.product_view', product_id=product.id)}}" class="btn btn-info">View Product</a>
+                         </div>
+                    </div>
+               </div>
+               
+               {% endfor %}
+
+
+          </div>
+     </div>
+
+{% endblock body %}

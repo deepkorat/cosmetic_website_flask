@@ -1,0 +1,15 @@
+{% extends "basic.html" %}
+{% block body %}
+
+
+     <!-- welcome section -->
+     <!-- <img src="{{url_for('static', filename='image/banner_img.png')}}" alt=""> -->
+     <div class="container mt-5">
+          <div class="jumbotron">
+               <h1 class="display-4">Welcome to our Cosmetic Store!</h1>
+               <p class="lead">Discover a wide range of high-quality cosmetics.</p>
+               <a href="{{url_for('main.all_product')}}" class="btn btn-dark ">Go to Products</a>
+          </div>
+     </div>
+
+{% endblock body %}

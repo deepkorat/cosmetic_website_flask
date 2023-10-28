@@ -1,0 +1,37 @@
+{% extends "basic.html" %}
+{% block body %}
+
+
+
+
+<!-- this is form  -->
+<div class="container">
+
+     <div class="input-group mb-3">
+          <div class="input-group-prepend">
+               <span class="input-group-text" id="basic-addon1">Name</span>
+          </div>
+          <input type="text" class="form-control" placeholder="ex. Mac doz" aria-label="Username"
+               aria-describedby="basic-addon1">
+     </div>
+
+     <div class="input-group mb-3">
+          <div class="input-group-prepend">
+               <span class="input-group-text" id="basic-addon1">Email</span>
+          </div>
+          <input type="email" class="form-control" placeholder="ex. macdoz35@gmail.com" aria-label="Username"
+               aria-describedby="basic-addon1">
+     </div>
+
+     <div class="input-group">
+          <div class="input-group-prepend">
+               <span class="input-group-text">Shipping Address</span>
+          </div>
+          <textarea class="form-control" placeholder="B-304, Guess Villa" aria-label="With textarea"></textarea>
+     </div>
+     <a href="#" class="btn btn-info mt-4 mb-5">Continue Shopping</a>
+     <br>
+</div>
+
+
+{% endblock body %}
